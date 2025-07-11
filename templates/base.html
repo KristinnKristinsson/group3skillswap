@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BASE TEMPLATE</title>
+  <title>
+    {% block title %}
+     
+     <!-- your page title here -->
+
+    {% endblock %}
+
+  </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
   <style>
     tr {
      
@@ -41,30 +49,42 @@
     <div class="navbar-header">
         <div class="navbar-brand"> <a class="nav-link" href="{% url 'index' %}">Welcome</a> </div>
     </div>
-    <ul class="navbar-nav">
-      <li class="nav-item ">
-        <a class="nav-link" href="{% url 'CHANGEME:register' %}">REGISTER</a>
-      </li>
-    </ul>
 
     <ul class="navbar-nav">
         <li class="nav-item ">
           <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
         </li>
     </ul>
-    {% if user.is_authenticated %}
     <ul class="navbar-nav">
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
-        </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'skills:addSkills' %}">ADD </a>
+      </li>
+  </ul>
+
+    
+      {% if user.is_authenticated %}
+      <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">LOGOUT</a>
+          </li>
+      </ul>
+     {% else %}
+      <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="#}">LOGIN</a>
+          </li>
+      </ul>
+     {% endif %}
+
+     <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">REGISTER</a>
+      </li>
     </ul>
-    {% else %}
-    <ul class="navbar-nav">
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'CHANGEME:login' %}">LOGIN</a>
-        </li>
-    </ul>
-    {% endif %}
+   
+  
+
+     
 </nav>
 
 <div class="container">   

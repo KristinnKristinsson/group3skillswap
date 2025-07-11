@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Review</title>
+</head>
+<body>
+    <h1>Add a New Review</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="review">Review:</label><br>
+        <textarea name="review" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'review_list' %}">Back to Reviews</a>
+</body>
+</html>

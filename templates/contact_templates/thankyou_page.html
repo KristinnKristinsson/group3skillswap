@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Thank You!</h1>
+{% for submission in submissions %}
+  <p><strong>{{ submission.name }}</strong>: {{ submission.message }}</p>
+{% endfor %}
+{% endblock %}

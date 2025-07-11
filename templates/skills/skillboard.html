@@ -1,8 +1,21 @@
-{% extends "registHTML/base.html" %}
+{% extends "base.html" %}
+{% block title %}Skills Board{% endblock %}
+
 
 {% block body-block %}
-<p></p>
-<h1>A warm Welcome! </h1>
+Do you have a skill that you want to share? <br />
+Share your skills <a href="{% url 'addSkills' %}" >here </a>!
 
+<h1> Skills Board</h1>
+
+{% for x in skills %}
+<article>
+    <h2>
+         {{x.title}}
+    </h2>
+    <p>User: {{x.username}}</p>
+    <p>Description: {{x.description}}</p>
+
+</article>
 
 {% endblock %}
