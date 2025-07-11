@@ -21,7 +21,7 @@ from user_authentication import views
     
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('user_authentication.urls', namespace='user_authentication')),
+    path('auth', include('user_authentication.urls', namespace='user_authentication')),
     path('', views.index, name='index'),
     
 ]
