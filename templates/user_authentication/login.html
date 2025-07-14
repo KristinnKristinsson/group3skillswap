@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{%  block body-block %}
+
+
+ <div class="login-container">
+  <h1>Please login</h1>
+  <form action="{% url 'user_authentication:user_login' %}" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Enter your username">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder="Enter your password">
+
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+
+{% endblock %}

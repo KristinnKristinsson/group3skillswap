@@ -22,7 +22,7 @@ def register(request):
 
     if request.method== 'POST':
         user_form = Form(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
+        profile_form = UserProfileForm(request.POST, request.FILES)
 
         if user_form.is_valid() and profile_form.is_valid():
 
@@ -42,7 +42,7 @@ def register(request):
         user_form = Form()
         profile_form = UserProfileForm()
     
-    return render(request, 'skills/registration.html',
+    return render(request, 'user_authentication/registration.html',
                   {'user_form':user_form,
                    'profile_form':profile_form,
                    'registered':registered})
@@ -67,4 +67,4 @@ def user_login(request):
             print('username: {} and password {}'.format(username,password))
             return HttpResponse("Invalid login details supplied!")
     else:
-        return render(request,'skills/login.html')
+        return render(request,'user_authentication/login.html')
