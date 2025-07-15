@@ -2,11 +2,55 @@
 
 {%  block body-block %}
 
-  <h1>Thank You for Your Message!</h1>
-  <p><a href="{% url 'contactapp:contact_index' %}">Back to Contact Page</a></p>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: black;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+a {
+    color: rgb(63, 156, 213);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+</style>
+
+  <h2>Thank You for Your Message!</h2>
+  <p>We'll get back to you as soon as possible.</p>
+  <p><a href="{% url 'contactapp:contact_index' %}">Back to Contact form</a></p>
 
    
-  <!-- <h2>All Submissions:</h2>
+  <h2>All Submissions:</h2>
   <ul>
     {% for submission in submissions %}
       <li><strong>{{ submission.name }}</strong> ({{ submission.email }}) said: "{{ submission.message }}"</li>
@@ -14,7 +58,7 @@
       <li>No messages yet.</li>
     {% endfor %}
   </ul>
-     -->
+    
 
 {% endblock %}
 

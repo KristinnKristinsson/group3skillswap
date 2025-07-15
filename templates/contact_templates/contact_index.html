@@ -10,9 +10,14 @@
     }
 
     h1 {
-      color: rgb(107, 145, 233);
+      color: black;
       text-align: center;
     }
+
+    p {
+    font-size: 16px;
+    margin: 10px 0;
+}
 
     form {
       background-color: #fff;
@@ -47,7 +52,7 @@
   </style>
 
   <h1>Contact Us</h1>
-  <p><a href="{% url 'contactapp:contact_index' %}">Contact Page</a></p>
+  <p><a href="{% url 'contactapp:contact_index' %}">Contact</a></p>
     
   <form method="post">
     {% csrf_token %}
