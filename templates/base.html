@@ -14,7 +14,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="static/index.css">
   <style>
     tr {
      
@@ -45,7 +45,7 @@
 
   </style>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
          <!-- Black header with white text -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="navbar-header">
@@ -85,11 +85,11 @@
     </ul>
    
   
-
-     
+    
 </nav>
 
-<div class="container">   
+
+<div class="container flex-grow-1">   
     {% block body-block %}
     
     
@@ -101,6 +101,24 @@
     {% endblock %}
     
 </div>
+<!-- Footer -->
+<footer class="bg-dark text-light py-4 mt-auto">
+  <div class="container d-flex justify-content-between align-items-center">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link text-light px-2" href="{% url 'index' %}">Home</a>
+      </li>
+     
+    </ul>
+    <small class="mb-0">&copy; {{ now|date:"Y" }} Lexicon </small>
+  </div>
+</footer>
 
+<!-- Include Bootstrap JS (if not already) -->
+<!-- <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-..."
+  crossorigin="anonymous"
+></script> -->
 </body>
 </html>
