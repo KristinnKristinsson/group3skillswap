@@ -3,46 +3,62 @@
   justify-content: flex-end;
   /* padding: 10px 20px; */
   }
-
- 
   
-  body {
-  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-  color: #000;
-  text-align: center;
-  padding: 1%;
-  border: solid 10px rgb(149, 108, 5);
-  border-radius: 10px;
+body {  
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    color: #000;
+    text-align: center;
+    padding: 1%;
+    border: solid 10px rgb(149, 108, 5);
+    border-radius: 10px;
 }
 
-
-
 .header{
-    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-    background-color: rgb(149, 108, 5);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #b6ccd7;
     border-radius: 25px;
- 
     display: flex; /*flexbox*/
     align-items: center;
     justify-content: space-between; /*put one item right, the other left*/
-    padding: 5px 20px 0px 0px ; /*updown 10px, right left 20*/
-    
-    height: 55px; 
+    /* padding: 5px 20px 0px 0px ; updown 10px, right left 20 */
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    height: 70px; 
+    display: flex;
+    color: #fff;
+  }
+
+/* Center section: absolute center text */
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  align-items: center;       /* Center logo and text horizontally */
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+}
+  .brand-text {
+    font-size: 3rem; /* similar to h1 */
+    font-weight: bold;
+    line-height: 1;
+    display:inline;
+    color:  rgb(149, 108, 5);
   }
   
-  /* .myNav{
-    
-    
-    text-align: center;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: .5rem;
-    padding-bottom: .5rem; 
-} */
 
+.navbar-brand a {
+  display: flex;         /* Align children (logo + text) in a row */
+  align-items: center;   /* Vertically center logo with text */
+  text-decoration: none; /* Remove link underline */
+  color: inherit;        /* Keep text color consistent */
+}
+
+img.logo {
+  width: 50px;
+  margin-right: 0px;
+  border-radius: 25px;
+  display: inline-block; /* Ensure it's treated as inline for flex */
+}
 .nav-links {
     display: flex;  /*  Needed if you want links side by side */
     align-items: center;
@@ -60,12 +76,83 @@
     /* padding: auto;
     padding-left: 5rem; */
 }
-.mid{
+ 
+img.logo{
+  width:50px;
+  /* position:absolute; */
+  left:10px;
+  display:block;
+  padding-left:0;
+  margin-right: 5%;
+  border-radius: 25px;  
+  margin-bottom: 5%;
+}
+
+/* Hamburger icon */
+.menu-toggle {
+  font-size: 50px; /* twice as big */
+  color: white;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+/* Menu links hidden by default */
+.menu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: #444;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  color:white;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Show menu when active */
+.menu.show {
+  display: flex;
+}
+
+/* .mid{
     padding: 20px 20px;
-    display: flex;  /*  Needed if you want links side by side */
+    width:100%;
+    display: flex;  #  Needed if you want links side by side 
     align-items: center;
-    justify-content:start;
-  }
+    justify-content:center;
+  } */
+
+  .mid {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;    /* center the whole row */
+    align-items: flex-start;
+    gap: 4rem;                  /* space between the two blocks */
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;     /* image on top, text below */
+    align-items: center;        /* center the text under image */
+    text-align: center;
+    cursor: pointer;
+}
+
 
   @keyframes myself2 {
     0%   {background-color:rgb(185, 239, 248); left:0px; top:0px;}
@@ -73,16 +160,7 @@
     90% {background-color:rgb(149, 108, 5); left:-10%; top:0px; }
     100% {background-color:rgb(185, 239, 248); left:0px; top:0px; border: 1px solid rgb(149, 108, 5); }
   }
-  #myself2{
-    width: 100px;
-   /* height: 100px; */
-    position: relative;
-    animation-name: myself2;
-    animation-duration: 5s;
-    /* animation-fill-mode: forwards; */
-    border-radius: 25px;
-    padding: 7px;
-  } 
+ 
 
 div.card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -91,7 +169,7 @@ div.card{
 
 a{
     text-decoration: none;
-    color:#fff;
+    color:rgb(149, 108, 5);
     font-size: 18px;
     
 }
@@ -108,50 +186,12 @@ a:hover {
   border-radius: 10px;
 }
 
-  .me{
-    background-color: rgb(185, 239, 248);
-    border-radius: 25px;
-    padding: 35px 25px;
-    border: solid 1px rgb(149, 108, 5);
-  }
-  .me2{
-    background-color: rgb(185, 239, 248);
-    border-top-right-radius:  25px;
-    border-bottom-right-radius:  25px;
-
-  }
-  .me3{
-    background-color: rgb(185, 239, 248);
-    border-top-right-radius:  0;
-    border-top-left-radius:  25px;
-    border-bottom-right-radius:  25px;
-    border: solid 1px rgb(149, 108, 5);
-  }
-
-  #myself{
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-.myself2{
-  text-align: center;
-  font-family:'Courier New', Courier, monospace;
-
-}
-  
-
  
 
   p {
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
     color: #000;
   }
-
-   span{
-    text-align: left;
-    padding: 3% 5%;
-    
-
-   }
 
    .tight{
     text-align: left;
@@ -161,7 +201,7 @@ a:hover {
   
 
 h1, h2,h3, h6{
-    font-family:fantasy; 
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     
 }
@@ -177,21 +217,11 @@ h1:hover, h2:hover, h3:hover, h6:hover{
     display: inline-block;
   }
 
- 
-img.logo{
-    width:50px;
-    /* position:absolute; */
-    /* left:0px;  */
-    display:block;
-    padding-left:0;
-    margin-right: 5%;
-    
-  
-}
-.logo:hover {
+
+/* .logo:hover {
     clip-path: circle(35%);
     transform: scale(5) translateX(25%) translateY(30%) ;  
-  }
+  } */
 
 
 footer{
@@ -246,7 +276,31 @@ footer{
     font-weight:bolder;
     transform: scale(1.6);
   }
-/* 
+
+  .button_img {
+    width:100px;
+    /* position:absolute; */
+    /* left:10px; */
+    display:block;
+    padding-left:0;
+    margin-right: 5%;
+    border-radius: 50px;  
+    margin-bottom: 5%;
+    cursor: pointer;   /* Show hand cursor on hover */
+    transition: transform 0.2s ease-in-out;
+    border: solid 1px rgb(72, 190, 237);
+
+  }
+  .button_img:hover {
+    transform: scale(1.5);  /* Slight zoom effect on hover */
+    transform: rotateY(180deg); 
+    transition-timing-function: ease-out;
+  }
+  
+
+
+
+  /* 
   .switch {
     position: relative;
     display: inline-block;
@@ -354,8 +408,6 @@ footer{
     font-weight:bolder;
     transform: scale(1.4);
   }
-
-  
  
   
  
