@@ -27,3 +27,16 @@ function userChoice(choice) {
 //   console.log('Im working')
 
 // }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menuToggle');
+  const menu   = document.getElementById('menu');
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', function () {
+    menu.classList.toggle('show');
+    // accessibility
+    const expanded = menu.classList.contains('show');
+    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  });
+});

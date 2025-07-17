@@ -1,16 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Skills Board{% endblock %}
 
 
 {% block body-block %}
 
 <div id="OffReq" style="display:block;">
-    <h1>Share skills! </h1>
+    <h1>Let's Share Skills! </h1>
 
-    <h2>What would you like to do?</h2>
+    
 
-    <button type="button" onclick="userChoice('offer')">I want to offer</button>
-    <button type="button" onclick="userChoice('request')">I want to request</button>
+    <div class="mid">
+        <div class="choice" onclick="userChoice('offer')">
+            <img src="{% static 'images/craiyon_teacher.png' %}" class="button_img" >
+            <h2>Offer</h2>
+        </div>
+        <div class="choice" onclick="userChoice('request')">
+            <img src="{% static 'images/craiyon_globeppl.png' %}" class="button_img" >
+            <h2>Request</h2>
+        </div>
+    </div>
+    
+
+    {% comment %} <button type="button" onclick="userChoice('offer')">I want to offer</button>
+    <button type="button" onclick="userChoice('request')">I want to request</button> {% endcomment %}
 </div>
 
 {% comment %} <img src="{% static 'my_app/example.jpg' %}" alt="My image"> {% endcomment %}
@@ -18,20 +31,20 @@
 <!-- Offer Form  -->
 <div id="offerForm" style="display:none;">
     <h3>Offer Skills</h3>
-    <form method="post" action="{% url 'skills:addSkills' %}" >   
+    <form method="post" action="{% url 'skills:addSkills' %}" class="skillsForm" >   
         {% csrf_token %}
         {{ addskills.as_p }}
-        <button type="submit">Submit Offer</button>
+        <button type="submit" class="btn-submit">Submit Offer</button>
     </form>
 </div>
 
 <!-- Request Form -->
 <div id="requestForm" style="display:none;">
     <h3>Request Skills</h3>
-    <form method="post" action="{% url 'skills:reqSkills' %}">
+    <form method="post" action="{% url 'skills:reqSkills' %}" class="skillsForm">
         {% csrf_token %}
         {{ getskills.as_p }}
-        <button type="submit">Submit Request</button>
+        <button type="submit" class="btn-submit">Submit Request</button>
     </form>
 </div>
 

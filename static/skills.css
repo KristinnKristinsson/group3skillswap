@@ -1,0 +1,25 @@
+.skillsForm input textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.skillsForm label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn-submit {
+    background-color: rgb(149, 108, 5);;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: rgb(185, 239, 248);
+}
