@@ -27,6 +27,7 @@ def addSkills(request):
             fromDB=added.save(commit=False) #create filled in instance of Model, do not commit
             fromDB.user=request.user  #add user to the form - is the connections CORRECT?? XX
             fromDB.save()             #commit to DB
+            messages.
             return redirect('skills:skillboard')
         else:
             return redirect('skills:skillboard')
