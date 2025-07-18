@@ -174,11 +174,22 @@ a:hover {
 
     gap: 20px; /*adds spacing between links.*/
     color: #fff;
-    font-family:fantasy; 
-    text-decoration: none; 
-    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   
-    text-decoration: underline overline;*/
+  }
+
+/* Navbar spacing & styles */
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  align-items: center;       /* Center logo and text horizontally */
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+}
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+}
+.brand-text {
+    font-size: 3rem; /* similar to h1 */
     font-weight: bold;
     padding: 0 10px;
     /* padding: auto;
@@ -384,6 +395,27 @@ footer{
     font-weight:bolder;
     transform: scale(1.6);
   }
+
+    .button_img {
+    width:100px;
+    /* position:absolute; */
+    /* left:10px; */
+    display:block;
+    padding-left:0;
+    margin-right: 5%;
+    border-radius: 50px;  
+    margin-bottom: 5%;
+    cursor: pointer;   /* Show hand cursor on hover */
+    transition: transform 0.2s ease-in-out;
+    border: solid 1px rgb(72, 190, 237);
+
+  }
+  .button_img:hover {
+    transform: scale(1.5);  /* Slight zoom effect on hover */
+    transform: rotateY(180deg); 
+    transition-timing-function: ease-out;
+  }
+  
 
     .button_img {
     width:100px;

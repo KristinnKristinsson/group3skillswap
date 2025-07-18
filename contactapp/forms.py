@@ -20,7 +20,7 @@ class ContactForm(forms.ModelForm):
             form.widget.attrs['disabled'] = True
     class Meta:
         model= ContactMessage
-        fields= ['recipient', 'skill', 'email', 'message']
+        fields= ['recipient', 'email', 'message','skill']
         widgets= {
             'message': forms.Textarea(attrs={'rows': 4}),
         }

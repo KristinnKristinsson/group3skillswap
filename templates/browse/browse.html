@@ -3,6 +3,8 @@
 <h2>Browse our skills</h2>
 
 <p>Sort by:
+    <a href="?sort=username&order=asc">Username /\</a> |
+    <a href="?sort=username&order=desc">\/</a> |
     <a href="?sort=title&order=asc">Title /\</a> |
     <a href="?sort=title&order=desc">\/</a> |
     <a href="?sort=category&order=asc">Category /\</a> |
@@ -25,22 +27,22 @@
         </tr>
     </thread>
     <tbody>
-        {% for skill in AddSkills %}
+        {% for skill in skills %}
         <tr>
             <td>
-              <a href="{% url 'skills_by_user' username=skill.user.user.username %}">
-                {{ skill.user.user.username }}
+              <a href="{% url 'browse:skills_by_user' username=skill.user.username %}">
+                {{ skill.user.username }}
               </a>
             </td>
             <td>
-              <a href="{% url 'skill_detail_from_user' username=skill.user.user.username skill_name=skill.title %}">
-                {{ skill.title }}
-              </a>
+                <a href="{% url 'browse:users_by_skill' slug=skill.slug %}">
+                    {{ skill.title }}
+                </a>
             </td>
             <td>{{ skill.category }}</td>
             <td>
-                {% if skill.average_rating %}
-                    {{ skill.average_rating|floatformat:1 }}
+                {% if skill.calculated_rating %}
+                    {{ skill.calculated_rating|floatformat:1 }}
                 {% else %}
                 No ratings
                 {% endif %}
@@ -57,5 +59,16 @@
         <tr><td colspan="5">No skills found.</td></tr>
         {% endfor %}
     </tbody>
+    <div class="pagination">
+        {% if skills.has_previous %}
+            <a href="?page={{ skills.previous_page_number }}&sort={{ current_sort}}&order={{ current_order }}">« Prev</a>
+        {% endif %}
+
+        Page {{ skills.number }} of {{ skills.paginator.num_pages }}
+
+        {% if skills.has_next %}
+        <a href="?page={{ skills.next_page_number }}&sort={{ current_sort }}&order={{ current_order }}">Next »</a>
+        {% endif %}
+    </div>
 </table>
 {% endblock %}

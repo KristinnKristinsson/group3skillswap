@@ -1,0 +1,77 @@
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10%;
+}
+
+.review-card {
+  background-color: rgb(185, 239, 248);
+  border: 2px solid rgb(149, 108, 5);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+}
+
+.review-card strong {
+  color: rgb(149, 108, 5);
+  font-weight: bold;
+}
+
+.stars {
+  font-size: 24px;
+  color: #f39c12;
+  display: inline-block;
+}
+
+.rating {
+  font-size: 16px;
+  margin-left: 8px;
+  color: #333;
+}
+
+.comment {
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.add-review-btn {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: rgb(149, 108, 5);
+  color: white;
+  font-family: fantasy;
+  font-size: 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.add-review-btn:hover {
+  background-color: black;
+  color: rgb(185, 239, 248);
+  transform: scale(1.1);
+}
+
+.star {
+  font-size: 30px;
+  color: #f39c12;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 5px;
+}
+
+.star:hover,
+.star.selected {
+  transform: scale(1.3);
+}

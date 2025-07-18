@@ -1,79 +1,63 @@
-/* registration.css */
-
-/* Scope all rules under the registration-page wrapper */
-.registration-page {
-  max-width: 500px;
-  margin: 60px auto;
-  padding: 2rem;
-  background-color: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-}
-
-.registration-page h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-  text-align: center;
-}
-
-.registration-page h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  color: #555;
-  text-align: center;
-}
-
-.registration-page form {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Wrap each field pair (label+input) in a card */
+/* Wrap each field pair (label+input) in a centered, constrained card */
 .registration-page form p {
-  margin-bottom: 1rem;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1.25rem 1rem 0.75rem;
+  margin: 0 auto 1.5rem;       /* center horizontally, 1.5rem bottom */
+  background: #f9f9f9;
+  
+  max-width: 360px;            /* limit width of each box */
+  width: 100%;                 /* allow it to shrink on mobile */
 }
 
-.registration-page form input[type="text"],
-.registration-page form input[type="email"],
-.registration-page form input[type="password"],
-.registration-page form input[type="file"],
-.registration-page form textarea {
+
+/* Float the label inside the box */
+.registration-page form p label {
+  position: absolute;
+  top: 0;                            /* sit at the top edge of the card */
+  left: 1rem;
+  transform: translateY(-50%);       /* pull it upward into the padding */
+  background: #fff;                  /* white bg so it overlaps cleanly */
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Style the inputs to fill the remaining space */
+.registration-page form p input,
+.registration-page form p select,
+.registration-page form p textarea {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.5rem;                /* some breathing room below the label */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  background: #fff;
   transition: border-color 0.2s;
 }
 
-.registration-page form input:focus,
-.registration-page form textarea:focus {
+.registration-page form p input:focus,
+.registration-page form p select:focus,
+.registration-page form p textarea:focus {
   outline: none;
-  border-color: #0066cc;
+  border-color: #007bff;
 }
 
+/* Style for the Register submit button */
 .registration-page form input[type="submit"] {
-  align-self: center;
-  padding: 0.75rem 2rem;
-  background-color: #0066cc;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  background-color: #007bff;    /* Bootstrap‑style blue */
+  color: #fff;                   /* white text for contrast */
+  padding: 0.75rem 1.5rem;       /* vertical 12px, horizontal 24px */
+  border: none;                  /* remove default border */
+  border-radius: 0.25rem;        /* soften corners */
+  font-size: 1rem;               /* matching your other buttons */
+  cursor: pointer;               /* pointer cursor on hover */
+  transition: background 0.2s;   /* smooth hover transition */
 }
 
 .registration-page form input[type="submit"]:hover {
-  background-color: #004999;
-}
-
-/* Thank‑you message styling */
-.registration-page .thankyou {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.25rem;
-  color: #2a7f62;
+  background-color: #0056b3;     /* darker blue on hover */
 }

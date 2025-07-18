@@ -6,11 +6,15 @@
 <ul>
     {% for skill in skills %}
     <li>
-        <a href="{% url 'skill_detail_from_user' username=user.username skill_name=skill.category %}">
+        <a href="{% url 'browse:skill_detail_from_user' username=user.username skill_name=skill.title %}">
             {{ skill.title }} ({{ skill.category }})
+        </a>
+        <a href="{% url 'browse:users_by_skill' slug=skill.slug %}">
+            All users providing this skill
         </a>
     </li>
     {% empty %}
     <li>This user hasn't offered any skills yet.</li>
     {% endfor %}
+    <p><a href="{% url 'browse:browse' %}">« Back to all skills</a></p>
 {%endblock body-block %}

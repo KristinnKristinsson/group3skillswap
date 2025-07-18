@@ -1,29 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Reviews List</title>
+    <link rel="stylesheet" href="{% static 'reviews.css' %}">
 </head>
 <body>
-    <h1>All Reviews</h1>
+    <div class="container">
+        <h1>All Reviews</h1>
 
-    {% if reviews %}
-        <ul>
-        {% for review in reviews %}
-            <li>
-                <strong>{{ review.name }}</strong><br>
-                {% for i in "12345"|slice:":review.rating"|make_list %}
-                    ⭐
+        {% if reviews %}
+            <div class="reviews-container">
+                {% for review in reviews %}
+                    <div class="review-card">
+                        <p class="review-header">
+                            <strong>{{ review.reviewer.user.username }}</strong> rated 
+                            <strong>{{ review.reviewee.user.username }}</strong>
+                        </p>
+
+                        <p class="stars">
+                            {% for i in "12345"|slice:":review.rating"|make_list %}
+                                ⭐
+                            {% endfor %}
+                            <span class="rating">({{ review.rating }}/5)</span>
+                        </p>
+
+                        <p class="comment">“{{ review.comment }}”</p>
+                        <p class="timestamp">{{ review.created_at|date:"M d, Y H:i" }}</p>
+                    </div>
                 {% endfor %}
-                ({{ review.rating }}/5)<br>
-                {{ review.comment }}<br>
-                <em>{{ review.created_at|date:"M d, Y H:i" }}</em>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No reviews yet.</p>
-    {% endif %}
+            </div>
+        {% else %}
+            <p class="no-reviews">No reviews yet.</p>
+        {% endif %}
 
-    <a href="{% url 'add_review' %}">Add a Review</a>
+        <a class="add-review-btn" href="{% url 'browse:browse' %}">Back to Browse</a>
+    </div>
 </body>
 </html>
