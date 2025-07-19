@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 #from django.http import HttpResponse
-from .models import AddSkills
+#from .models import AddSkills
 from .forms import AddSkillsForm, RequestSkillsForm
 from django.contrib.auth.decorators import login_required
 
@@ -27,7 +27,7 @@ def addSkills(request):
             fromDB=added.save(commit=False) #create filled in instance of Model, do not commit
             fromDB.user=request.user  #add user to the form - is the connections CORRECT?? XX
             fromDB.save()             #commit to DB
-            messages.
+            #messages.
             return redirect('skills:skillboard')
         else:
             return redirect('skills:skillboard')

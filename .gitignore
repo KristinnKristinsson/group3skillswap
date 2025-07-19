@@ -1,2 +1,44 @@
 **/__pycache__/
 **/migrations/__pycache__
+# Python
+*.pyc
+__pycache__/
+
+# Virtualenv
+venv/
+env/
+*.env
+
+# Django specific
+db.sqlite3
+media/
+staticfiles/
+
+# Logs
+*.log
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Byte-compiled files
+*.pyo
+*.pyd
+
+# Test & coverage
+.coverage
+*.cover
+
+# Node / Frontend stuff (if applicable)
+node_modules/
+
+
+#various junk
+basefinal
+basecopy.html
+todo
+index.css.copy
+finalcss

@@ -13,7 +13,7 @@
   --brand-light: rgb(185, 239, 248);
   --brand-dark: rgb(38, 23, 48);
   --font-base: Georgia, 'Times New Roman', Times, serif;
-  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', Times, serif;
   --transition-speed: 0.2s;
 }
 
@@ -302,20 +302,6 @@ img.logo {
     text-align: left;
     padding: 20px 10%;
    }
-  
-  
-
-h1, h2,h3, h6{
-    font-family:fantasy; 
-    font-weight: bold;
-    
-}
-
-h1:hover, h2:hover, h3:hover, h6:hover{
-    color: rgb(149, 108, 5);
-    text-shadow: 2px 2px 5px;
-
-}
 
 
 .inline{
@@ -343,27 +329,7 @@ img.logo{
   }
 
 
-footer{
-    background-color: rgb(149, 108, 5);
-    font-family: fantasy;
-    /* text-align: left; */
-    border-radius: 25px;
- 
-    display: flex; /*flexbox*/
-    align-items: center;
-    justify-content: space-between; /*put one item right, the other left*/
-    padding: 5px 20px 5px 5px ; /*updown 10px, right left 20*/
-    height: 30px; 
-    /*box-sizing: border-box; /*don't remember what this does */ 
-  }
 
-  .footer_icon1{
-    height: 23px;   /*   Makes it match the footer's height */
-   /* max-height: 100%;  Ensures it won't grow beyond the container */
-   border-radius: 50px 50px;
-   /*object-fit: contain; /* (Optional) keeps it scaled nicely inside */
-   /* box-sizing: none; */
-  }
   
   .up{
     font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
@@ -862,4 +828,26 @@ ul{
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);} */
+  /*
+
+    footer{
+      background-color: rgb(149, 108, 5);
+      font-family: fantasy;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; //put one item right, the other left
+      padding: 5px 20px 5px 5px ; 
+      height: 30px; 
+      //box-sizing: border-box; //don't remember what this does 
+    }
   
+    .footer_icon1{
+      height: 23px;
+     // max-height: 100%;  Ensures it won't grow beyond the container
+     border-radius: 50px 50px;
+     //object-fit: contain; // (Optional) keeps it scaled nicely inside 
+     // box-sizing: none;
+    }
+
+    */

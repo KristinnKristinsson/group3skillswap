@@ -22,7 +22,7 @@ class AddSkills(models.Model):
     category = models.CharField(max_length=2, choices=CATEGORIES, default='OT')
     availability = models.BooleanField()
     location = models.CharField(max_length=100)
-    description = models.TextField(max_length=200) # very big, please make it look better
+    description = models.TextField(max_length=200) 
     average_rating = models.FloatField(default=0.0)
     slug = models.SlugField(blank=True)
     
