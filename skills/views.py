@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 #from .models import AddSkills
 from .forms import AddSkillsForm, RequestSkillsForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -27,8 +28,8 @@ def addSkills(request):
             fromDB=added.save(commit=False) #create filled in instance of Model, do not commit
             fromDB.user=request.user  #add user to the form - is the connections CORRECT?? XX
             fromDB.save()             #commit to DB
-            #messages.
-            return redirect('skills:skillboard')
+            messages.success(request, "Skill added successfully!")
+            return redirect('skills:success')
         else:
             return redirect('skills:skillboard')
     else: #GET
@@ -49,3 +50,5 @@ def reqSkills(request):
     else: #GET
         return redirect('skills:skillboard')
         
+def success(request):
+    return render(request, 'skills/success.html')

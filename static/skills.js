@@ -40,3 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   });
 });
+
+function messageTimeout(){
+  //self.time=5000;
+  document.querySelectorAll('.messages .alert').forEach(function(el){
+    el.style.transition = "opacity 1s";
+    el.style.opacity = 0;
+    setTimeout(() => el.remove(), 1000);  // remove after fade out
+});
+}
+  // window.location.href = "{% url 'skills:skillboard' %}";
+

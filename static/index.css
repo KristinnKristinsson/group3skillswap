@@ -62,8 +62,31 @@ p {
 }
 
 
+
+p {
+  font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+  color: #000;
+}
+
+ span{
+  text-align: left;
+  padding: 3% 5%;
+  
+
+ }
+
+ .tight{
+  text-align: left;
+  padding: 20px 10%;
+ }
+
+
 .inline{
-    display: inline-block;
+  display: inline-block;
+}
+
+.noShow{
+  display: none;
 }
 
 a{
@@ -86,15 +109,7 @@ a:hover {
 }
 
 
-/* .mid{
-    padding: 20px 20px;
-    width:100%;
-    display: flex;  #  Needed if you want links side by side 
-    align-items: center;
-    justify-content:center;
-  } */
-
-  .mid {
+.mid {
     padding: 20px;
     width: 100%;
     display: flex;
@@ -283,36 +298,6 @@ img.logo {
 
 }
   
-
- 
-
-  p {
-    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
-    color: #000;
-  }
-
-   span{
-    text-align: left;
-    padding: 3% 5%;
-    
-
-   }
-
-   .tight{
-    text-align: left;
-    padding: 20px 10%;
-   }
-
-
-.inline{
-    display: inline-block;
-}
-
-.noShow{
-    display: none;
-}
-
- 
 img.logo{
     width:50px;
     /* position:absolute; */
@@ -561,22 +546,7 @@ img.logo{
     font-weight:bolder;
     transform: scale(1.4);
   }
-  .mid {
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;    /* center the whole row */
-    align-items: flex-start;
-    gap: 4rem;                  /* space between the two blocks */
-}
 
-.choice {
-    display: flex;
-    flex-direction: column;     /* image on top, text below */
-    align-items: center;        /* center the text under image */
-    text-align: center;
-    cursor: pointer;
-}
   
  /*-----------------FOOTER ----------------------*/
  footer{
