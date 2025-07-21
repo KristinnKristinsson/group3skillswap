@@ -42,6 +42,9 @@ h1:hover, h2:hover, h3:hover, h6:hover {
   color: var(--brand-gold);
   text-shadow: 2px 2px 5px;
 }
+.h-gold{
+  color: var(--brand-gold);
+}
 
 div.card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -520,11 +523,13 @@ img.logo{
     transition-timing-function: ease-out;
   }
   
- 
-
-
-  .noShow{
-    display: none;
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
   }
   
   .btn2{
